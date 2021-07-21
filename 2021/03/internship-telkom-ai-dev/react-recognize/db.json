@@ -1,0 +1,25 @@
+{
+  "recognize": [
+    {
+      "groupname": "group1",
+      "subgroupname": "subgroup1",
+      "subgroupid": "1",
+      "image": "image1",
+      "id": 1
+    },
+    {
+      "groupname": "group2",
+      "subgroupname": "subgroup2",
+      "subgroupid": "2",
+      "image": "image2",
+      "id": 2
+    },
+    {
+      "groupname": "group3",
+      "subgroupname": "subgroup3",
+      "subgroupid": "3",
+      "image": "image3",
+      "id": 3
+    }
+  ]
+}
