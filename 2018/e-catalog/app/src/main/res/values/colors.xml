@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#425381</color>
+    <color name="colorPrimaryDark">#2f2f31</color>
+    <color name="colorAccent">#e74c3c</color>
+
+    <color name="white">#e1e1e1</color>
+
+
+    <color name="fab1_color">#2f2f31</color>
+    <color name="fab2_color">#2f2f31</color>
+    <color name="fab3_color">#8c92a2</color>
+</resources>

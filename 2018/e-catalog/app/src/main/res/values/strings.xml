@@ -1,0 +1,189 @@
+<resources>
+    <string name="app_name">eCatalog</string>
+
+    <string name="title1">Saga of Tanya the Evil Vol. 1: Deus lo Vult</string>
+    <string name="aut1">Carlo Zen</string>
+    <string name="desc1">High above the blood- and mud-soaked trenches, a young girl pits herself against army mages in high stakes aerial duels with bullets, spells, and bayonets. Her name is Tanya Degurechaff and she is the Devil of the Rhine, one of the greatest soldiers the Empire has ever seen! But inside her mind lives a ruthless, calculating ex-salaryman who enjoyed a peaceful life in Japan until he woke up in a war-torn world. Reborn as a destitute orphaned girl with nothing to her name but memories of a previous life, Tanya will do whatever it takes to survive, even if she can find it only behind the barrel of a gun!</string>
+
+    <string name="title2">Saga of Tanya the Evil Vol. 2: Plus Ultra</string>
+    <string name="aut2">Carlo Zen</string>
+    <string name="desc2"> After being reborn and becoming a magic wielding soldier in the Imperial Army, Tanya Degurechaff bemoans her fate of being placed at the very edge of the front lines instead of a comfy place in the rear. Swearing revenge on Being X, she plunges head-first into battle, dragging her subordinate along with her!</string>
+
+    <string name="title3">Saga of Tanya the Evil Vol. 3: The Finest Hour</string>
+    <string name="aut3">Carlo Zen</string>
+    <string name="desc3">"Contrary to her dearest wish to find a safe place and stay there, Major Tanya von Degurechaff continues to wade through the fog of war with her troops on land, at sea, and in the air. After many battles with the increasingly numerous enemies of the Empire, a chance for a breakthrough finally appears. But when her comrades begin celebrating the glories they've reaped, savoring the sweet nectar of imminent triumph, Tanya alone is frozen in fear. Has the Empire decisively won the war, or is this nothing more than a Pyrrhic victory?"</string>
+
+    <string name="title4">Saga of Tanya the Evil Vol. 4: Dabit Deus His Quoque Finem</string>
+    <string name="aut4">Carlo Zen</string>
+    <string name="desc4">A devil wanders the battlefield in the guise of an adorable young child and her name is Tanya Degurechaff! After returning from the sandy southlands, Tanya receives an incredibly suspicious order from headquarters to embark on a training exercise. In reality, command has sent her on a covert mission to initiate a border conflict with the Federation. Soon the Empire finds itself embroiled in another fight it cannot back down from, even if it means making the entire world their enemies! </string>
+
+    <string name="title5">Overlord Vol. 1: The Undead King</string>
+    <string name="aut5">Kugane Maruyama</string>
+    <string name="desc5">"For twelve years, the virtual world of Yggdrasil has served as the playground and battlefield for the skeletal lord Momonga and his guild of fellow monsters, Ainz Ooal Gown. But the guild's glory days are over, and the game is shutting down permanently. When Momonga logs in one last time just to be there when the servers go dark, something happens-and suddenly, fantasy is reality. A rogues' gallery of fanatically devoted NPCs is ready to obey his every order, but the world Momonga now inhabits is not the one he remembers. The game may be over, but the epic tale of Ainz Ooal Gown is only beginning."</string>
+
+    <string name="title6">Overlord Vol. 2: The Dark Warrior</string>
+    <string name="aut6">Kugane Maruyama</string>
+    <string name="desc6">It has been a week since Momonga logged in to his favorite RPG one last time and stranded himself there. Now he leads his guild as the Ainz Ooal Gown overlord. Finding himself in dire need of better information, he travels disguised as an adventurer to the walled city of E-Rantel, with Narberal the battle maid at his side. The pair accept a mission to retrieve medicinal herbs, making for a forest said to be the home of a great and wise beast. But the sinister influence of a fanatical cabal approaches E-Rantel, and the armor-clad Ainz will face both a ruthless warrior and a legion of the undead!</string>
+
+    <string name="title7">Overlord Vol. 3: The Bloody Valkyrie</string>
+    <string name="aut7">Kugane Maruyama</string>
+    <string name="desc7">Lord Ainz has made great progress moonlighting as the indomitable hero Momon, but what should be a moment of triumph is shattered -by news of rebellion. He vows to find out what has happened and to defend the honor of his guild and home-Ainz Ooal Gown.</string>
+
+    <string name="title8">Overlord Vol. 4: The Lizardmen Heroes</string>
+    <string name="aut8">Kugane Maruyama</string>
+    <string name="desc8">One day, in a peaceful lizardman village, an ominous messenger visits with a warning from the Great Tomb of Nazarick: In eight days time, they will be annihilated. Unwilling to stand by and wait, the fighter and traveler Zaryusu journeys to the other lizardman tribes - who have received the same message - hoping to form an alliance against their impossibly strong opponent. But though the warriors try valiantly to resist, Ainz Ooal Gown and his undead army hold the power to determine their fate.</string>
+
+    <string name="title9">Overlord Vol. 5: The Men of the Kingdom Part I</string>
+    <string name="aut9">Kugane Maruyama</string>
+    <string name="desc9">"In the kingdom of Re-Estize, a sinister organization known as the Eight Fingers holds sway of the criminal underworld. Ainzs orders Sebas to infiltrate the capital to gather intel on this shadowy group sucking the marrow from the kingdom's bones. At the same time, a young soldier named Climb struggles to hone his skills to better serve the "Golden Princess" while the once great warrior Brian returns home a broken man. Against the backdrop of an ancient city fraying at its edges, three men will challenge the corruption of the vicious Eight Fingers!"</string>
+
+    <string name="title10">Overlord Vol. 6: The Men of the Kingdom Part II</string>
+    <string name="aut10">Kugane Maruyama</string>
+    <string name="desc10">"The human realm of the kingdom is headed for its greatest disaster yet! After failing to prevent a daring raid on the Eight Fingers' appalling brothel, the Six Arms are dying for a chance to defend their reputation as the criminal underworld's strongest enforcers. These criminals are notorious for their brutality as much as their strength, meaning the only people who stand a chance against them are the legendary Blue Roses and one polite, dignified butler. When these thugs make Sebas the first target of their revenge, they may get much more than they bargained for by inadvertently picking a fight with Ainz Ooal Gown!"</string>
+
+    <string name="title11">Overlord Vol. 7: The Invaders of the Great Tomb</string>
+    <string name="aut11">Kugane Maruyama</string>
+    <string name="desc11">"A group of "workers" whose better judgement has been clouded by hopes and expectations have descended into the unknown depths of a mysterious tomb. These trespassers include the small but elite team Foresight, the storied warriors of Heavy Masher, the crew lead by a legendary elder worker, Green Leaf, and the invincible swordsmen of Angel. They are some of the best that can be hired, but as more and more vengeful residents of Nazarrick appear, will any make it out alive?"</string>
+
+    <string name="title12">Overlord Vol. 8: The Two Leaders</string>
+    <string name="aut12">Kugane Maruyama</string>
+    <string name="desc12">"After being saved from danger by Ainz, Enri and the apothecary Nfirea have been living life to the fullest as they spend their days together in Carne Village alongside their goblin-guard neighbors. But after the Wise King of the Forest left the region, the balance of the forest has been disrupted and something has filled the vacuum of power"</string>
+
+    <string name="title13">1984</string>
+    <string name="aut13">George Orwell</string>
+    <string name="desc13">"Written in 1948, 1984 was George Orwell’s chilling prophecy about the future. And while 1984 has come and gone, his dystopian vision of a government that will do anything to control the narrative is timelier than ever
+
+•Nominated as one of America’s best-loved novels by PBS’s The Great American Read•
+
+“The Party told you to reject the evidence of your eyes and ears. It was their final, most essential command.”
+
+Winston Smith toes the Party line, rewriting history to satisfy the demands of the Ministry of Truth. With each lie he writes, Winston grows to hate the Party that seeks power for its own sake and persecutes those who dare to commit thoughtcrimes. But as he starts to think for himself, Winston can’t escape the fact that Big Brother is always watching
+
+A startling and haunting vision of the world, 1984 is so powerful that it is completely convincing from start to finish. No one can deny the influence of this novel, its hold on the imaginations of multiple generations of readers, or the resiliency of its admonitions—a legacy that seems only to grow with the passage of time."</string>
+
+    <string name="title14">Animal Farm</string>
+    <string name="aut14">George Orwell</string>
+    <string name="desc14">"George Orwell's timeless and timely allegorical novel—a scathing satire on a downtrodden society’s blind march towards totalitarianism.
+
+“All animals are equal, but some animals are more equal than others.”
+
+A farm is taken over by its overworked, mistreated animals. With flaming idealism and stirring slogans, they set out to create a paradise of progress, justice, and equality. Thus the stage is set for one of the most telling satiric fables ever penned—a razor-edged fairy tale for grown-ups that records the evolution from revolution against tyranny to a totalitarianism just as terrible.
+
+When Animal Farm was first published, Stalinist Russia was seen as its target. Today it is devastatingly clear that wherever and whenever freedom is attacked, under whatever banner, the cutting clarity and savage comedy of George Orwell’s masterpiece have a meaning and message still ferociously fresh."</string>
+
+    <string name="title15">Metro 2033</string>
+    <string name="aut15">Dmitry Glukhovsky</string>
+    <string name="desc15">"The novel that gave birth to the video games 'Metro 2033' and 'Metro: Last Light' The breathtaking original story that inspired both the METRO 2033 and METRO: LAST LIGHT video games! An international bestseller, translated into 35 languages. Set in the shattered subway of a post apocalyptic Moscow, Metro 2033 is a story of intensive underground survival where the fate of mankind rests in your hands. In 2013 the world was devastated by an apocalyptic event, annihilating almost all mankind and turning the earth’s surface into a poisonous wasteland. A handful of survivors took refuge in the depths of the Moscow underground, and human civilization entered a new Dark Age. The year is 2033. An entire generation has been born and raised underground, and their besieged Metro Station-Cities struggle for survival, with each other, and the mutant horrors that await outside. Artyom was born in the last days before the fire. Having never ventured beyond his Metro Station-City limits, one fateful event sparks a desperate mission to the heart of the Metro system, to warn the remnants of mankind of a terrible impending threat. His journey takes him from the forgotten catacombs beneath the subway to the desolate wastelands above, where his actions will determine the fate of mankind. BURIED. ALIVE. It is now two decades since the planet was convulsed by the Final War, which flashed across the continents, engulfing all of them in an instant, to close the final chapter in our history. Deployed in this war, the most advanced inventions and greatest discoveries of the human genius drove the human race back into caves, submerging civilization forever in the impenetrable gloom of a final Dark Age. Nowadays, in the year 2033, no one can recall any longer what triggered the hostilities. Absurd. But if you think for a moment, what does it matter who started it? Those who unleashed the war were the first to die… And the inheritance they left to us was a smoldering ember that used to be called the Earth. The entire world lies in ruins. The human race has been almost completely exterminated. Even cities that were not totally demolished were rendered unfit to live in by the radiation. And the rumors say that beyond the city limits lie boundless expanses of scorched desert and dense thickets of mutated forest. But what really is there, no one knows. The airwaves are empty, and when the few radio operators who are left tune in for the millionth time to the frequencies on which New York, Paris, Tokyo and Buenos Aires once used to broadcast, all they hear is a dismal howl. More than twenty years have passed since the day when the final plane took off. Railroad tracks, corroded and pitted with rust, now lead nowhere. The great construction projects of the age were transformed into ruins without ever being completed and the skyscrapers of Chicago and Frankfurt were reduced to rubble. The historic districts of Rome lie smothered in moss and fungus, the Eiffel Tower, gnawed through by reddish-brown leprosy, has snapped in half. And the weeds of fiction and fantasy are flourishing on the memory of humankind’s former glory. It is only twenty years since the war ended before it had even begun. But in those twenty years the world has changed beyond all recognition. The planet has new masters now, and the human race is condemned to huddle in burrows, consoling itself with memories. The radiation and viruses with which some human beings attempted to eradicate others have brought new creatures into the world. And now they rule by right over the desolate Earth. The mutants are far better adapted to this new world than human beings. The human era is almost over. There are not many of us left, only a few tens of thousands, out of seven billion human beings. We don’t know if there were others who survived in some other place, on the other side of the world, or if we are the last humans on the planet. We live in the Moscow Metro."</string>
+
+    <string name="title16">Metro 2034</string>
+    <string name="aut16">Dmitry Glukhovsky</string>
+    <string name="desc16">"The long-awaited sequel to the cult bestseller Metro 2033, the second volume in the Metro trilogy, Metro 2034 continues the story of survival and struggle that unfolds in the mazes of the Moscow subway after WWIII. As the entire civilization was wiped out by atomic bombs and the surface of the planet is polluted with neclear fallout, the only place suitable for men to live are shelters and bunkers, the largest of which is the subway system of Moscow, aka the Metro. The year is 2034. There's no hope for humans to return to the surface of Earth, to repopulate the forsaken cities, and to become once again the masters of the world they used to be. So they rebuild a strange and grotesque civilization in the tunnels and at the stations of the subway. Stations become city-states that wage trade and war on each other. A fragile equilibrium is established. And then all can be ruined in matter of days. A new horrible threat looms that can eradicate the remains of humanity and end our era. It would take three unlikely heroes to face this menace. The basis of two bestselling computer games Metro 2033 and Metro Last Light, the Metro books have put Dmitry Glukhovsky in the vanguard of Russian speculative fiction. Metro 2034 tells a previously unknown part of the greater Metro saga that some only know from video games. Whether you're new to this series, are a fan of the first novel, or want to explore the world of Metro in depth, Metro 2034 is a perfect read for you! Featuring blistering action, vivid and tough characters, claustrophobic tension and dark satire the Metro books have become bestsellers across the world."</string>
+
+    <string name="title17">Metro 2035</string>
+    <string name="aut17">Dmitry Glukhovsky</string>
+    <string name="desc17">"World War Three wiped out the humankind. The planet is empty now. Huge cities became dust and ashes. Railroads are being eaten by rust. Abandoned satellites hang lonely on the orbit. Radio is mute on all the frequencies.
+
+The only survivors of the last war were those who made it into the gates of the Metro, the subway system of Moscow city. It’s there, hundreds of feet below the ground, in the vaults of what was constructed as the world’s largest air-raids shelter that people try to outlive the end of the days. It’s there that they created a new world for themselves.
+
+The stations of Metro became city-states, and its citizens, torn apart by religions and ideologies are fighting for the now scarce commodities: air, water, and space. This tiny underground world can only remind humans of an immense world they once were the masters of.
+
+It’s been twenty years past Doomsday, and yet the survivors refuse to give up. The most stubborn of them keep cherishing a dream: when the radiation level from nuclear bombings subsides, they will be able to return to the surface and have the life their parents once had.
+
+But the most stubborn of the stubborn continues to search for other survivors in this huge emptiness that once was called Earth. His name is Artyom. He would give anything to lead his own people from the underground onto the surface.
+
+And he will.
+
+*              *              *
+
+METRO 2035 continues and terminates the story of Artyom, the hero of the original Metro 2033 book and the Metro video games. Millions of readers across the world have been waiting for this novel for the long ten years. For those who have been following Artyom’s adventures from the very beginning, Metro 2035 will deliver the concluding powerful part of the saga, with the ultimate part of the puzzle that can’t be found anywhere else. For the new readers, Metro 2035 will become an excellent introduction into this unique fiction universe that has millions of fans across the world.
+
+*              *              *
+
+Dmitry Glukhovsky’s METRO novels have already sold millions of copies in 37 languages. They have also become a basis of cult video games ‘Metro 2033’ and ‘Metro Last Light’, and the film rights were optioned by a Hollywood studio.
+
+*              *              *
+
+Behind the tense plot and the dark ambience of Metro 2035, there’s yet another level: that of social dystopia and political satire. Metro metaphorically paints a pitiless picture of today’s Russia, that is being overcast again by the dark shadows of its gruesome past. Do Russians need freedom? Do they want a war? Can they survive without an enemy? Who’s to blame and can anything be done about it? Eternal questions. Fresh answers."</string>
+
+    <string name="title18">Anne Frank: The Diary of a Young Girl</string>
+    <string name="aut18">Anne Frank</string>
+    <string name="desc18">"Discovered in the attic in which she spent the last years of her life, Anne Frank’s remarkable diary has become a world classic—a powerful reminder of the horrors of war and an eloquent testament to the human spirit.
+
+In 1942, with the Nazis occupying Holland, a thirteen-year-old Jewish girl and her family fled their home in Amsterdam and went into hiding. For the next two years, until their whereabouts were betrayed to the Gestapo, the Franks and another family lived cloistered in the “Secret Annexe” of an old office building. Cut off from the outside world, they faced hunger, boredom, the constant cruelties of living in confined quarters, and the ever-present threat of discovery and death. In her diary Anne Frank recorded vivid impressions of her experiences during this period. By turns thoughtful, moving, and surprisingly humorous, her account offers a fascinating commentary on human courage and frailty and a compelling self-portrait of a sensitive and spirited young woman whose promise was tragically cut short.
+
+Praise for The Diary of a Young Girl
+
+“A truly remarkable book.”—The New York Times
+
+“One of the most moving personal documents to come out of World War II.”—The Philadelphia Inquirer
+
+“There may be no better way to commemorate the fiftieth anniversary of the end of World War II than to reread The Diary of a Young Girl, a testament to an indestructible nobility of spirit in the face of pure evil.”—Chicago Tribune
+
+“The single most compelling personal account of the Holocaust . . . remains astonishing and excruciating.”—The New York Times Book Review
+
+“How brilliantly Anne Frank captures the self-conscious alienation and naïve self-absorption of adolescence.”—Newsday"</string>
+
+    <string name="title19">To Kill a Mockingbird</string>
+    <string name="aut19">Harper Lee</string>
+    <string name="desc19">"Voted America's Best-Loved Novel in PBS's The Great American Read
+
+Harper Lee's Pulitzer Prize-winning masterwork of honor and injustice in the deep South—and the heroism of one man in the face of blind and violent hatred
+
+One of the most cherished stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime."</string>
+
+    <string name="title20">Angels and Demons</string>
+    <string name="aut20">Dan Brown</string>
+    <string name="desc20">"The explosive Robert Langdon thriller from Dan Brown, the #1 New York Times bestselling author of The Da Vinci Code and Inferno—now a major film directed by Ron Howard and starring Tom Hanks and Felicity Jones.
+
+An ancient secret brotherhood. A devastating new weapon of destruction.
+
+When world-renowned Harvard symbologist Robert Langdon is summoned to a Swiss research facility to analyze a mysterious symbol—seared into the chest of a murdered physicist—he discovers evidence of the unimaginable: the resurgence of an ancient secret brotherhood known as the Illuminati. the most powerful underground organization ever to walk the earth. The Illuminati has now surfaced to carry out the final phase of its legendary vendetta against its most hated enemy—the Catholic Church.
+
+Langdon’s worst fears are confirmed on the eve of the Vatican’s holy conclave, when a messenger of the Illuminati announces they have hidden an unstoppable time bomb at the very heart of Vatican City. With the countdown under way, Langdon jets to Rome to join forces with Vittoria Vetra, a beautiful and mysterious Italian scientist, to assist the Vatican in a desperate bid for survival.
+
+Embarking on a frantic hunt through sealed crypts, dangerous catacombs, deserted cathedrals, and even the most secretive vault on earth, Langdon and Vetra follow a 400-year-old trail of ancient symbols that snakes across Rome toward the long-forgotten Illuminati lair. a clandestine location that contains the only hope for Vatican salvation.
+
+An explosive international thriller, Angels and Demons careens from enlightening epiphanies to dark truths as the battle between science and religion turns to war."</string>
+
+    <string name="title21">The Da Vinci Code</string>
+    <string name="aut21">Dan Brown</string>
+    <string name="desc21">"Dan Brown’s mega-bestseller is now available for a new generation of readers. This young adult adaptation is the perfect way to get ready for Origin, the latest novel featuring the character Robert Langdon. It will remind fans everywhere why the New York Times calls The Da Vinci Code “blockbuster perfection.”
+
+Includes over twenty color photos showing important locations, landmarks, and artwork, taking readers from Paris to London and beyond!
+
+The greatest conspiracy of the past two thousand years is about to unravel.
+
+Robert Langdon, professor of religious symbology at Harvard, is in Paris to give a lecture. At the reception that follows, he is scheduled to meet with a revered curator from the world-famous Louvre museum. But the curator never shows up, and later that night Langdon is awakened by authorities and told that the curator has been found dead. He is then taken to the Louvre—the scene of the crime—where he finds out that baffling clues have been left behind.
+
+Thus begins a race against time, as Robert Langdon becomes a suspect and, with the help of French cryptologist Sophie Neveu, must decipher a mystifying trail of clues that the two come to realize have been left specifically for them. If Robert and Sophie cannot solve the puzzle in time, an ancient truth could be lost forever—and they themselves might end up as collateral damage.
+
+Praise for the adult edition of The Da Vinci Code
+
+“WOW . . . Blockbuster perfection. An exhilaratingly brainy thriller. Not since the advent of Harry Potter has an author so flagrantly delighted in leading readers on a breathless chase and coaxing them through hoops.”—The New York Times
+
+“A new master of smart thrills. A pulse-quickening, brain-teasing adventure.”—People"</string>
+
+    <string name="title22">The Lost Symbol</string>
+    <string name="aut22">Dan Brown</string>
+    <string name="desc22">"In this stunning follow-up to the global phenomenon The Da Vinci Code, Dan Brown demonstrates once again why he is the world’s most popular thriller writer. The Lost Symbol is a masterstroke of storytelling–a deadly race through a real-world labyrinth of codes, secrets, and unseen truths… all under the watchful eye of Brown’s most terrifying villain to date. Set within the hidden chambers, tunnels, and temples of Washington, D.C., The Lost Symbol accelerates through a startling landscape toward an unthinkable finale.
+
+As the story opens, Harvard symbologist Robert Langdon is summoned unexpectedly to deliver an evening lecture in the U.S. Capitol Building. Within minutes of his arrival, however, the night takes a bizarre turn. A disturbing object–artfully encoded with five symbols–is discovered in the Capitol Building. Langdon recognizes the object as an ancient invitation… one meant to usher its recipient into a long-lost world of esoteric wisdom.
+
+When Langdon’s beloved mentor, Peter Solomon–a prominent Mason and philanthropist–is brutally kidnapped, Langdon realizes his only hope of saving Peter is to accept this mystical invitation and follow wherever it leads him. Langdon is instantly plunged into a clandestine world of Masonic secrets, hidden history, and never-before-seen locations–all of which seem to be dragging him toward a single, inconceivable truth.
+
+As the world discovered in The Da Vinci Code and Angels and Demons, Dan Brown’s novels are brilliant tapestries of veiled histories, arcane symbols, and enigmatic codes. In this new novel, he again challenges readers with an intelligent, lightning-paced story that offers surprises at every turn. The Lost Symbol is exactly what Brown’s fans have been waiting for… his most thrilling novel yet."</string>
+
+    <string name="title23">Inferno</string>
+    <string name="aut23">Dan Brown</string>
+    <string name="desc23">"Harvard professor of symbology Robert Langdon awakens in an Italian hospital, disoriented and with no recollection of the past thirty-six hours, including the origin of the macabre object hidden in his belongings. With a relentless female assassin trailing them through Florence, he and his resourceful doctor, Sienna Brooks, are forced to flee. Embarking on a harrowing journey, they must unravel a series of codes, which are the work of a brilliant scientist whose obsession with the end of the world is matched only by his passion for one of the most influential masterpieces ever written, Dante Alighieri's The Inferno.
+
+Dan Brown has raised the bar yet again, combining classical Italian art, history, and literature with cutting-edge science in this captivating thriller."</string>
+
+    <string name="title24">Origin</string>
+    <string name="aut24">Dan Brown</string>
+    <string name="desc24">"Robert Langdon, Harvard professor of symbology, arrives at the ultramodern Guggenheim Museum Bilbao to attend the unveiling of a discovery that “will change the face of science forever.” The evening’s host is Edmond Kirsch, a forty-year-old billionaire and futurist, and one of Langdon’s first students.
+
+But the meticulously orchestrated evening suddenly erupts into chaos, and Kirsch’s precious discovery teeters on the brink of being lost forever. Facing an imminent threat, Langdon is forced to flee. With him is Ambra Vidal, the elegant museum director who worked with Kirsch. They travel to Barcelona on a perilous quest to locate a cryptic password that will unlock Kirsch’s secret.
+
+Navigating the dark corridors of hidden history and extreme re­ligion, Langdon and Vidal must evade an enemy whose all-knowing power seems to emanate from Spain’s Royal Palace. They uncover clues that ultimately bring them face-to-face with Kirsch’s shocking discovery…and the breathtaking truth that has long eluded us."</string>
+</resources>
