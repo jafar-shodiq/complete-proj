@@ -1,0 +1,4 @@
+Pertanyaan use case:
+1. Jawaban dalam bahasa inggris atau indo?
+2. Apakah ada data dictionary yang menjelaskan tiap kolom?
+3. Untuk pembuatan dashboard, apakah ada ketentuan khusus? misal software yang digunakan

@@ -1,0 +1,15 @@
+Bagaimana data quality dari data excel yang diberikan dan bagaimana
+meningkatkan data quality dari data tersebut?
+
+Tanggapan:
+- Cukup berantakan
+- Format tanggal tidak konsisten, ada yg pake petik (') ada yg dash (-). Akan tetapi, untuk data yg relatif lebih baru, sudah dalam tipe datetime
+
+Solusi
+- Bisa dimulai dengan menghapus row paling atas yg berisi judul
+
+
+
+Sedikit saran dan insight
+- Bisa dilakukan dengan input data menggunakan aplikasi khusus
+- Data dalam database SQL

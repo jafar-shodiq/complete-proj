@@ -1,0 +1,9 @@
+Step to Import CSV to Google Spreadsheet:
+--------------------------------------------
+1. Open spreadsheet
+2. Click File (top left)
+3. Select Import
+4. You can choose upload after download it
+5. See the configuration in the image with the title "Import to Google Spreadsheet"
+6. Your Test Data is ready to analyze
+7. Have Fun ^.^

@@ -1,0 +1,79 @@
+DROP TABLE IF EXISTS `web_events`;
+CREATE TABLE `web_events` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `account_id` int(11) NOT NULL,
+    `occured_at` int(11) NOT NULL,
+    `channel` varchar(50) NOT NULL,
+    PRIMARY KEY (`id`))
+
+
+DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE `accounts` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL,
+    `website` varchar(50) NOT NULL,
+    `lat` varchar(25) NOT NULL,
+    `long` varchar(25) NOT NULL,
+    `primary_poc` varchar(50) NOT NULL,
+    `sales_rep_id` int(11) NOT NULL,
+    PRIMARY KEY (`id`))
+
+ALTER TABLE `web_events`
+ADD CONSTRAINT `fk_accounts_accountid`
+FOREIGN KEY (`account_id`)
+REFERENCES `accounts`(`id`)
+
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `account_id` int(11) NOT NULL,
+    `standard_qty` int(11) NOT NULL,
+    `poster_qty` int(11) NOT NULL,
+    `gloss_qty` int(11) NOT NULL,
+    `total` int(11) NOT NULL,
+    `occured_at` int(11) NOT NULL,
+    `standard_amt_usd` int(11) NOT NULL,
+    `gloss_amt_usd` int(11) NOT NULL,
+    `poster_amt_usd` int(11) NOT NULL,
+    `total_amt_usd` int(11) NOT NULL,
+    PRIMARY KEY (`id`))
+
+ALTER TABLE `orders`
+ADD CONSTRAINT `fk_orders_accounts_accountid`
+FOREIGN KEY (`account_id`)
+REFERENCES `accounts`(`id`)
+
+
+DROP TABLE IF EXISTS `sales_reps`;
+CREATE TABLE `sales_reps` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL,
+    `region_id` int(11) NOT NULL,
+    PRIMARY KEY (`id`))
+
+DROP TABLE IF EXISTS `region`;
+CREATE TABLE `region` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(50) NOT NULL,
+    PRIMARY KEY (`id`))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

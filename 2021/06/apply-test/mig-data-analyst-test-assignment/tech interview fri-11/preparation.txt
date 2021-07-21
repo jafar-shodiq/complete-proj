@@ -1,0 +1,4 @@
+For your preparation, please find below the logistics for your Technical Interview: 
+-Please prepare for Jupyter Notebook or a similar app
+-Please prepare for ATM-Case Data (the assignment file before) raw/cleaned  
+-You can prepare for some topics such as SQL and Dimension of Data Quality

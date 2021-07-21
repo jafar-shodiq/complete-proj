@@ -1,0 +1,34 @@
+(No. 1)
+SELECT region.name AS region_name, accounts.name as account_name, (orders.total_amt_usd/orders.total) AS unit_price
+FROM accounts
+JOIN orders
+ON orders.account_id=accounts.id
+JOIN sales_reps
+ON sales_reps.id=accounts.sales_rep_id
+JOIN region
+ON region.id=sales_reps.region_id
+WHERE orders.standard_qty>100 AND orders.poster_qty>50
+
+(No. 2)
+SELECT sales_reps.name, MAX(orders.total_amt_usd)
+FROM sales_reps
+JOIN accounts
+ON sales_reps.id=accounts.sales_rep_id
+JOIN orders
+ON orders.account_id=accounts.id
+WHERE sales_reps.region_id=1
+UNION
+SELECT sales_reps.name, MAX(orders.total_amt_usd)
+FROM sales_reps
+JOIN accounts
+ON sales_reps.id=accounts.sales_rep_id
+JOIN orders
+ON orders.account_id=accounts.id
+WHERE sales_reps.region_id=2
+
+(No. 3)
+SELECT orders.occured_at, accounts.name, orders.total, orders.total_amt_usd
+FROM orders
+JOIN accounts
+ON orders.account_id=accounts.id
+WHERE orders.occured_at=2015
