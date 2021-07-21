@@ -1,0 +1,60 @@
+#####
+*Decision tree**
+
+```{r}
+#install.packages('rpart')
+```
+```{r}
+library(rpart)
+```
+
+```{r}
+str(kyphosis)
+```
+```{r}
+head(kyphosis)
+```
+```{r}
+tree <- rpart(Kyphosis ~. , method='class', data=kyphosis)
+```
+
+```{r}
+printcp(tree)
+```
+```{r}
+plot(tree, uniform=TRUE, main='Kyphosis Tree')
+text(tree, use.n=TRUE, all=TRUE)
+```
+```{r}
+#install.packages('rpart.plot')
+```
+```{r}
+library(rpart.plot)
+```
+
+```{r}
+prp(tree)
+```
+
+#####
+**Random forest**
+
+```{r}
+#install.packages('randomForest')
+```
+```{r}
+library(randomForest)
+```
+```{r}
+rf.model <- randomForest(Kyphosis ~. , data=kyphosis)
+print(rf.model)
+```
+```{r}
+rf.model$predicted
+```
+```{r}
+rf.model$ntree
+```
+```{r}
+rf.model$confusion
+```

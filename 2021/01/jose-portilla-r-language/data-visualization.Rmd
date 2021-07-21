@@ -1,0 +1,97 @@
+```{r}
+#install.packages('ggplot2')
+```
+```{r}
+#install.packages('ggplot2movies')
+```
+
+#####
+**Histogram**
+
+```{r}
+library(ggplot2)
+library(ggplot2movies)
+```
+```{r}
+head(movies)
+```
+```{r}
+pl <- ggplot(movies, aes(x=rating))
+pl2 <- pl + geom_histogram(binwidth=0.2, color='red', fill='pink', alpha=0.3)
+pl3 <- pl2 + xlab('Movie Rating') + ylab('Count') + ggtitle('Title')
+pl3
+```
+
+#####
+**Scatterplot**
+
+```{r}
+df <- mtcars
+pl <- ggplot(df, aes(x=wt, y=mpg))
+pl2 <- pl + geom_point(aes(color=hp), size=5)
+pl2
+```
+
+#####
+**Barplot**
+
+```{r}
+df <- mpg
+pl <- ggplot(df, aes(x=class))
+pl2 <- pl + geom_bar(aes(fill=drv), position='fill')
+pl2
+```
+```{r}
+df <- mtcars
+pl <- ggplot(df, aes(x=factor(cyl), y=mpg))
+pl2 <- pl + geom_boxplot(aes(fill=factor(cyl))) + theme_dark()
+pl2
+```
+
+######
+**2-Variable plotting**
+
+```{r}
+pl <- ggplot(movies, aes(x=year, y=rating))
+pl2 <- pl + geom_bin2d() + scale_fill_gradient(high='red', low='green')
+pl2
+```
+```{r}
+pl <- ggplot(movies, aes(x=year, y=rating))
+pl2 <- pl + geom_density2d()
+pl2
+```
+
+#####
+**Coordinates and faceting**
+
+```{r}
+pl <- ggplot(mpg, aes(x=displ, y=hwy))
+pl2 <- pl + geom_point()
+pl3 <- pl2 + coord_cartesian(xlim=c(1, 4), ylim=c(15, 30))
+pl3
+```
+```{r}
+library(dplyr)
+distinct(select(mpg, cyl))
+```
+
+```{r}
+pl3 <- pl2 + facet_grid(. ~ cyl)
+pl3
+```
+
+#####
+**Themes**
+```{r}
+#install.packages('ggthemes')
+```
+
+```{r}
+library(ggthemes)
+#theme_set(theme_minimal())
+pl <- ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+pl + theme_solarized()
+```
+
+

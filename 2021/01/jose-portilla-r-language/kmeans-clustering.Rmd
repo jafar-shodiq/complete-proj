@@ -1,0 +1,24 @@
+```{r}
+library(ISLR)
+head(iris)
+```
+```{r}
+str(iris)
+```
+```{r}
+library(ggplot2)
+
+ggplot(iris, aes(Petal.Length, Petal.Width)) + geom_point(aes(color=Species))
+```
+```{r}
+set.seed(101)
+iris.cluster <- kmeans(iris[,1:4], 3, nstart=20)
+iris.cluster
+```
+```{r}
+table(iris.cluster$cluster, iris$Species)
+```
+```{r}
+library(cluster)
+clusplot(iris, iris.cluster$cluster, color=TRUE, shade=TRUE, labels=0, lines=0)
+```

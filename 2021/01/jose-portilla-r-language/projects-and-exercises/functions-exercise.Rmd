@@ -1,0 +1,78 @@
+```{r}
+hello.you <- function(name){
+  print(paste('Hello', name))
+}
+hello.you('Me')
+```
+```{r}
+hello.you2 <- function(name){
+  return(paste('Hello', name))
+}
+print(hello.you2('Me'))
+```
+```{r}
+prod <- function(num1, num2){
+  return(num1 * num2)
+}
+prod(3, 4)
+```
+```{r}
+num.check <- function(num, v){
+  for(item in v){
+    if(item == num){
+      return(TRUE)
+    }
+  }
+  return(FALSE)
+}
+num.check(2, c(1, 2, 3))
+```
+```{r}
+num.count <- function(num, v){
+  count <- 0
+  for(item in v){
+    if(item == num){
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+num.count(1, c(1, 1, 2, 2, 3, 1, 4, 5, 5, 2, 2, 1, 3))
+```
+```{r}
+bar.count <- function(pack){
+  amount.of.ones <- pack %% 5
+  amount.of.fives <- (pack - amount.of.ones) / 5
+  return(amount.of.ones + amount.of.fives)
+}
+bar.count(17)
+```
+```{r}
+sum.func <- function(num1, num2, num3){
+  result <- c(0)
+  if(num1 %% 3 != 0){
+    result <- append(num1, result)
+  }
+  if(num2 %% 3 != 0){
+    result <- append(num2, result)
+  }
+  if(num3 %% 3 != 0){
+    result <- append(num3, result)
+  }
+  return(sum(result))
+}
+sum.func(7, 2, 3)
+```
+```{r}
+prime.check <- function(num){
+  if(num == 2){
+    return(TRUE)
+  }else if(any(num %% 2:(num - 1) == 0)){
+    return(FALSE)
+  }else{
+    return(TRUE)
+  }
+}
+print(paste(prime.check(5), prime.check(61), prime.check(77)))
+```
+

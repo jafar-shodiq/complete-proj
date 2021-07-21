@@ -1,0 +1,45 @@
+```{r}
+library(ISLR)
+head(iris)
+```
+```{r}
+str(iris)
+```
+```{r}
+stand.features <- scale(iris[1:4])
+var(stand.features[, 1])
+```
+```{r}
+final.data <- cbind(stand.features, iris[5])
+head(final.data)
+```
+```{r}
+library(caTools)
+set.seed(101)
+
+sample <- sample.split(final.data$Species, SplitRatio=0.7)
+train <- subset(final.data, sample == TRUE)
+test <- subset(final.data, sample == FALSE)
+```
+
+```{r}
+library(class)
+
+predicted.species <- NULL
+error.rate <- NULL
+
+for(i in 1:10){
+  set.seed(101)
+  predicted.species <- knn(train[1:4], test[1:4], train$Species, k=i)
+  error.rate[i] <- mean(test$Species != predicted.species)
+}
+```
+
+```{r}
+library(ggplot2)
+
+k.values <- 1:10
+error.df <- data.frame(error.rate, k.values)
+
+ggplot(error.df, aes(k.values, error.rate)) + geom_point() + geom_line(lty='dotted', color='red')
+```

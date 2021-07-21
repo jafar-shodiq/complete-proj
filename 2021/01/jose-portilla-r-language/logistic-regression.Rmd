@@ -1,0 +1,123 @@
+```{r}
+df <- read.csv('./datasets/titanic_train.csv')
+head(df)
+```
+```{r}
+str(df)
+```
+```{r}
+#install.packages('Amelia')
+```
+```{r}
+library(Amelia)
+```
+```{r}
+missmap(df, main='Missing Map', col=c('yellow', 'black'), legend=FALSE)
+```
+```{r}
+library(ggplot2)
+```
+```{r}
+ggplot(df, aes(Survived)) + geom_bar()
+```
+```{r}
+ggplot(df, aes(Pclass)) + geom_bar(aes(fill=factor(Pclass)))
+```
+```{r}
+ggplot(df, aes(Sex)) + geom_bar(aes(fill=factor(Sex)))
+```
+```{r}
+ggplot(df, aes(Age)) + geom_histogram(bins=20, alpha=0.5, fill='blue')
+```
+```{r}
+ggplot(df, aes(SibSp)) + geom_bar()
+```
+```{r}
+ggplot(df, aes(Fare)) + geom_histogram(fill='green', color='black')
+```
+```{r}
+pl <- ggplot(df, aes(Pclass, Age))
+pl2 <- pl + geom_boxplot(aes(group=Pclass, fill=factor(Pclass), alpha=0.4))
+pl3 <- pl2 + scale_y_continuous(breaks=seq(min(0), max(80), by=2))
+pl3
+```
+```{r}
+impute_age <- function(age, class){
+  out <- age
+  for(i in 1:length(age)){
+    
+    if(is.na(age[i])){
+      
+      if(class[i] == 1){
+        out[i] <- 37
+      }else if(class[i] == 2){
+        out[i] <- 29
+      }else{
+        out[i] <- 24
+      }
+    }else{
+      out[i] <- age[i]
+    }
+  }
+  return(out)
+}
+```
+```{r}
+fixed.ages <- impute_age(df$Age, df$Pclass)
+```
+```{r}
+df$Age <- fixed.ages
+```
+```{r}
+missmap(df, main='Imputation Check', col=c('yellow', 'black'), legend=FALSE)
+```
+```{r}
+str(df)
+```
+```{r}
+library(dplyr)
+```
+```{r}
+df.new <- select(df, -PassengerId, -Name, -Ticket, -Cabin)
+head(df.new)
+```
+```{r}
+str(df.new)
+```
+```{r}
+df.new$Survived <- factor(df.new$Survived)
+df.new$Pclass <- factor(df.new$Pclass)
+df.new$Sex <- factor(df.new$Sex)
+df.new$SibSp<- factor(df.new$SibSp)
+df.new$Parch <- factor(df.new$Parch)
+df.new$Embarked <- factor(df.new$Embarked)
+```
+```{r}
+str(df.new)
+```
+```{r}
+log.model <- glm(Survived ~. , family=binomial(link='logit'), data=df.new)
+summary(log.model)
+```
+```{r}
+library(caTools)
+set.seed(101)
+split <- sample.split(df.new$Survived, SplitRatio=0.7)
+final.train <- subset(df.new, split==TRUE)
+final.test <- subset(df.new, split==FALSE)
+```
+```{r}
+final.log.model <- glm(Survived ~. , family=binomial(link='logit'), data=final.train)
+summary(final.log.model)
+```
+```{r}
+fitted.probabilities <- predict(final.log.model, final.test, type='response')
+fitted.results <- ifelse(fitted.probabilities > 0.5, 1, 0)
+```
+```{r}
+mis.class.error <- mean(fitted.results != final.test$Survived)
+1-mis.class.error
+```
+```{r}
+table(final.test$Survived, fitted.probabilities>0.5)
+```

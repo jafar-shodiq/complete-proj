@@ -1,0 +1,168 @@
+**Moneyball**
+
+2.2 Batting Table
+playerID       Player ID code
+yearID         Year
+stint          player's stint (order of appearances within a season)
+teamID         Team
+lgID           League
+G              Games
+G_batting      Game as batter
+AB             At Bats
+R              Runs
+H              Hits
+2B             Doubles
+3B             Triples
+HR             Homeruns
+RBI            Runs Batted In
+SB             Stolen Bases
+CS             Caught Stealing
+BB             Base on Balls
+SO             Strikeouts
+IBB            Intentional walks
+HBP            Hit by pitch
+SH             Sacrifice hits
+SF             Sacrifice flies
+GIDP           Grounded into double plays
+G_Old          Old version of games (deprecated)
+
+2.15 Salaries table
+
+yearID         Year
+teamID         Team
+lgID           League
+playerID       Player ID code
+salary         Salary
+
+
+**Data**
+
+```{r}
+bat <- read.csv('../datasets/batting.csv')
+head(bat)
+```
+```{r}
+str(bat)
+```
+```{r}
+summary(bat)
+```
+```{r}
+library(dplyr)
+```
+
+
+```{r}
+head(filter(bat, yearID==2004))
+```
+```{r}
+distinct(bat, teamID)
+```
+```{r}
+distinct(bat, lgID)
+```
+```{r}
+sum(is.na(bat$lgID))
+```
+```{r}
+head(bat$AB)
+```
+
+**Feature engineering**
+
+batting average
+```{r}
+bat$BA <- bat$H / bat$AB
+```
+```{r}
+tail(bat$BA, 5)
+```
+on base percentage
+```{r}
+bat$OBP <- (bat$H + bat$BB + bat$HBP) / (bat$AB + bat$BB + bat$HBP + bat$SF)
+```
+```{r}
+tail(bat$OBP)
+```
+```{r}
+bat$X1B <- bat$H - bat$X2B - bat$X3B - bat$HR
+```
+```{r}
+tail(bat$X1B)
+```
+slugging percentage
+```{r}
+bat$SLG <- (bat$X1B + (2 * bat$X2B) + (3 * bat$X3B) + (4 * bat$HR)) / bat$AB
+```
+```{r}
+tail(bat$SLG)
+```
+```{r}
+str(bat)
+```
+
+**Merge salary with batting**
+
+```{r}
+sal <- read.csv('../datasets/salaries.csv')
+head(sal)
+```
+```{r}
+bat <- subset(bat, yearID >= 1985)
+```
+```{r}
+summary(bat$yearID)
+```
+```{r}
+merged <- merge(bat, sal, by=c('playerID', 'yearID'))
+head(merged)
+```
+```{r}
+summary(merged)
+```
+
+**Analyzing the lost players**
+
+```{r}
+lost_players <- subset(merged, playerID %in% c('giambja01', 'damonjo01', 'saenzol01'))
+head(lost_players)
+```
+```{r}
+lost_players <- subset(lost_players, yearID == 2001)
+```
+```{r}
+lost_players <- lost_players[, c('playerID', 'H', 'X2B', 'X3B', 'HR', 'OBP', 'SLG', 'BA', 'AB')]
+```
+```{r}
+head(lost_players)
+```
+
+**Replacement players**
+
+```{r}
+avail_players <- filter(merged, yearID == 2001)
+head(avail_players)
+```
+```{r}
+library(ggplot2)
+ggplot(avail_players, aes(x=OBP, y=salary)) + geom_point()
+```
+```{r}
+avail_players <- filter(avail_players, salary < 8000000, OBP > 0)
+```
+```{r}
+avail_players <- filter(avail_players, AB >= 500)
+```
+```{r}
+possible <- head(arrange(avail_players, desc(OBP)), 10)
+possible
+```
+```{r}
+possible <- possible[, c('playerID', 'OBP', 'AB', 'salary')]
+```
+```{r}
+possible
+```
+```{r}
+possible[2:4, ]
+```

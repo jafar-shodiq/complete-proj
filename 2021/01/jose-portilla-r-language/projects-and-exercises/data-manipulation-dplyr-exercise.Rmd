@@ -1,0 +1,28 @@
+```{r}
+library(dplyr)
+```
+```{r}
+head(mtcars)
+```
+```{r}
+filter(mtcars, mpg > 20, cyl == 6)
+```
+```{r}
+head(arrange(mtcars, cyl, desc(wt)))
+```
+```{r}
+head(select(mtcars, mpg, hp))
+```
+```{r}
+distinct(mtcars, gear)
+```
+```{r}
+mutate(mtcars, performance=hp/wt)
+```
+```{r}
+summarise(mtcars, avg_mpg=mean(mpg))
+```
+```{r}
+result <- mtcars %>% filter(cyl==6) %>% summarise(avg_hp=mean(hp))
+result
+```

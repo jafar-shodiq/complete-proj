@@ -1,0 +1,290 @@
+#####
+**Data frame basic**
+
+```{r}
+state.x77
+```
+```{r}
+USPersonalExpenditure
+```
+```{r}
+women
+```
+```{r}
+data()
+```
+```{r}
+WorldPhones
+```
+```{r}
+head(state.x77)
+```
+```{r}
+tail(state.x77)
+```
+```{r}
+str(state.x77)
+```
+```{r}
+summary(state.x77)
+```
+```{r}
+days <- c('Mon', 'Tue', 'Wed', 'Thu', 'Fri')
+temp <- c(22.2, 21, 23, 24.3, 25)
+rain <- c(T, T, F, F, T)
+
+df <- data.frame(days, temp, rain)
+df
+```
+```{r}
+str(df)
+```
+```{r}
+summary(df)
+```
+#####
+**Indexing and selection**
+```{r}
+df
+```
+```{r}
+df[1, ]
+```
+```{r}
+df[, 1]
+```
+```{r}
+df[, 'rain']
+```
+```{r}
+df[1:5, c('days', 'temp')]
+```
+```{r}
+df$days
+```
+```{r}
+df$temp
+```
+```{r}
+df['days']
+```
+```{r}
+subset(df, subset=(rain == TRUE))
+```
+```{r}
+subset(df, subset=(temp > 23))
+```
+```{r}
+sorted.temp <- order(df['temp'])
+sorted.temp
+```
+```{r}
+df[sorted.temp, ]
+```
+```{r}
+desc.temp <- order(-df['temp'])
+desc.temp
+```
+```{r}
+df[desc.temp, ]
+```
+#####
+**Data frame operations part 1**
+Creating data frame
+
+```{r}
+empty <- data.frame()
+empty
+```
+
+```{r}
+c1 <- 1:10
+c2 <- letters[1:10]
+
+df <- data.frame(col.name.1=c1, col.name.2=c2)
+df
+```
+Importing and exporting data frame
+
+```{r}
+write.csv(df, file='./datasets/saved_df.csv')
+df2 <- read.csv('./datasets/saved_df.csv')
+df2
+```
+Getting information about the data frame
+
+```{r}
+df
+```
+
+```{r}
+nrow(df)
+```
+```{r}
+ncol(df)
+```
+```{r}
+colnames(df)
+```
+```{r}
+rownames(df)
+```
+```{r}
+str(df)
+```
+```{r}
+summary(df)
+```
+
+Referencing cells
+
+```{r}
+df
+```
+```{r}
+df[[5, 2]]
+```
+```{r}
+df[[5, 'col.name.2']]
+```
+```{r}
+df[[2, 'col.name.1']] <- 9999
+```
+```{r}
+df
+```
+
+Referencing rows
+
+```{r}
+df[1, ]
+```
+
+Referencing columns
+
+```{r}
+mtcars
+```
+```{r}
+mtcars['mpg']
+```
+
+```{r}
+mtcars$'mpg'
+```
+```{r}
+mtcars[, 'mpg']
+```
+```{r}
+mtcars[, 1]
+```
+```{r}
+mtcars[['mpg']]
+```
+```{r}
+
+```
+```{r}
+mtcars[c('mpg', 'cyl')]
+```
+#####
+**Data frame operations part 2**
+Adding rows and columns
+
+```{r}
+df2 <- data.frame(col.name.1=2000, col.name.2='new')
+df2
+```
+```{r}
+dfnew <- rbind(df, df2)
+dfnew
+```
+```{r}
+df
+```
+```{r}
+df$'newcol' <- 2*df$'col.name.1'
+df
+```
+```{r}
+df$'newcol.copy' <- df$'newcol'
+df
+```
+```{r}
+df[, 'newcol.copy2'] <- df$'newcol'
+df
+```
+
+Setting column names
+
+```{r}
+colnames(df)
+```
+```{r}
+colnames(df) <- c('1', '2', '3', '4', '5')
+df
+```
+```{r}
+colnames(df)[1] <- 'new.col.name'
+df
+```
+
+Selecting multiple rows and columns
+
+```{r}
+df[1:10, ]
+```
+```{r}
+df[1:3, ]
+```
+```{r}
+head(df)
+```
+```{r}
+head(df, 7)
+```
+```{r}
+df[-2, ]
+```
+```{r}
+head(mtcars)
+```
+```{r}
+mtcars[mtcars$'mpg' > 20, ]
+```
+```{r}
+mtcars[(mtcars$'mpg' > 20) & (mtcars$'cyl' == 6), ]
+```
+```{r}
+mtcars[(mtcars$'mpg' > 20) | (mtcars$'cyl' == 6), ]
+```
+```{r}
+mtcars[(mtcars$'mpg' > 20) & (mtcars$'cyl' == 6), c('mpg', 'cyl', 'hp')]
+```
+```{r}
+subset(mtcars, (mpg > 20) & (cyl == 6))
+```
+```{r}
+mtcars[, c(1, 2, 3)]
+```
+```{r}
+mtcars[, c('mpg', 'cyl', 'disp')]
+```
+
+Dealing with missing data
+
+```{r}
+any(is.na(mtcars))
+```
+```{r}
+any(is.na(mtcars$'mpg'))
+```
+```{r}
+df
+```
+```{r}
+df[is.na(df)] <- 0
+```
+```{r}
+mtcars$'mpg'[is.na(mtcars$'mpg')] <- mean(mtcars$'mpg')
+```

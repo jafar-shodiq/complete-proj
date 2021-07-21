@@ -1,0 +1,78 @@
+```{r}
+#install.packages('MASS')
+```
+```{r}
+library(MASS)
+
+df <- Boston
+head(df)
+```
+```{r}
+any(is.na(df))
+```
+```{r}
+maxs <- apply(df, 2, max)
+maxs
+```
+```{r}
+mins <- apply(df, 2, min)
+mins
+```
+```{r}
+scaled.data <- scale(df, center=mins, scale=maxs-mins)
+scaled <- as.data.frame(scaled.data)
+head(scaled)
+```
+```{r}
+library(caTools)
+
+sample <- sample.split(scaled$medv, SplitRatio=0.7)
+train <- subset(scaled, sample == TRUE)
+test <- subset(scaled, sample == FALSE)
+```
+
+```{r}
+#install.packages('neuralnet')
+```
+```{r}
+library(neuralnet)
+```
+
+```{r}
+n <- names(train)
+n
+```
+```{r}
+f <- as.formula(paste('medv ~', paste(n[!n %in% 'medv'], collapse='+')))
+f
+```
+```{r}
+nn <- neuralnet(f, data=train, hidden=c(5, 3), linear.output=TRUE)
+```
+
+```{r}
+plot(nn)
+```
+```{r}
+predicted.nn.values <- compute(nn, test[1:13])
+str(predicted.nn.values)
+```
+```{r}
+true.predictions <- predicted.nn.values$net.result * (max(df$medv) - min(df$medv)) + min(df$medv)
+
+test.r <- (test$medv) * (max(df$medv) - min(df$medv)) + min(df$medv)
+```
+
+```{r}
+MSE.nn <- sum((test.r - true.predictions)^2) / nrow(test)
+MSE.nn
+```
+```{r}
+error.df <- data.frame(test.r, true.predictions)
+head(error.df)
+```
+```{r}
+library(ggplot2)
+
+ggplot(error.df, aes(x=test.r, y=true.predictions)) + geom_point() + stat_smooth()
+```

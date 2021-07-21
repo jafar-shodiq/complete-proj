@@ -1,0 +1,157 @@
+#####
+**EDA**
+
+```{r}
+df <- read.csv('./datasets/student-mat.csv', sep=';')
+head(df)
+```
+```{r}
+summary(df)
+```
+```{r}
+str(df)
+```
+```{r}
+library(ggplot2)
+library(ggthemes)
+library(dplyr)
+```
+```{r}
+num.cols <- sapply(df, is.numeric)
+cor.data <- cor(df[, num.cols])
+cor.data
+```
+```{r}
+#install.packages('corrgram')
+```
+```{r}
+#install.packages('corrplot')
+```
+```{r}
+library(corrgram)
+library(corrplot)
+```
+```{r}
+corrplot(cor.data, method='color')
+```
+```{r}
+corrgram(df)
+```
+```{r}
+corrgram(df, order=T, lower.panel=panel.shade, upper.panel=panel.pie, text.panel=panel.txt)
+```
+```{r}
+ggplot(df, aes(x=G3)) + geom_histogram(bins=20, alpha=0.5, fill='blue')
+```
+
+#####
+**Preprocessing**
+
+```{r}
+any(is.na(df))
+```
+```{r}
+for(i in colnames(df)){
+  print(unique(df[[i]]))
+}
+```
+```{r}
+df_factor <- df %>% select('school', 'sex', 'address', 'famsize', 'Pstatus', 'Medu', 'Fedu', 'Mjob', 'Fjob', 'reason', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic')
+colnames(df_factor)
+```
+```{r}
+for(i in colnames(df_factor)){
+  df[[i]] <- as.factor(df[[i]])
+}
+str(df)
+```
+
+#####
+**Train test split**
+
+```{r}
+#install.packages('caTools')
+```
+```{r}
+library(caTools)
+```
+```{r}
+set.seed(101)
+sample <- sample.split(df$G3, SplitRatio=0.7)
+```
+```{r}
+train <- subset(df, sample == TRUE)
+test <- subset(df, sample == FALSE)
+print(paste(count(train), count(test)))
+```
+
+#####
+**Build the model**
+
+```{r}
+model <- lm(G3 ~ ., data=train)
+```
+```{r}
+summary(model)
+```
+```{r}
+res <- residuals(model)
+res <- as.data.frame(res)
+```
+```{r}
+head(res)
+```
+```{r}
+ggplot(res, aes(res)) + geom_histogram(fill='blue', alpha=0.5)
+```
+
+#####
+**Evaluate**
+
+```{r}
+G3.predictions <- predict(model, test)
+```
+```{r}
+results <- cbind(G3.predictions, test$G3)
+colnames(results) <- c('predicted', 'actual')
+results <- as.data.frame(results)
+head(results)
+```
+```{r}
+min(results)
+```
+```{r}
+to_zero <- function(x){
+  if(x < 0){
+    return(0)
+  }else{
+    return(x)
+  }
+}
+```
+```{r}
+results$predicted <- sapply(results$predicted, to_zero)
+```
+```{r}
+min(results)
+```
+```{r}
+mse <- mean((results$actual - results$predicted)^2)
+mse
+```
+```{r}
+rmse <- mse^0.5
+rmse
+```
+```{r}
+sse <- sum((results$predicted - results$actual)^2)
+sse
+```
+```{r}
+sst <- sum((mean(df$G3) - results$actual)^2)
+sst
+```
+```{r}
+r2 <- 1 - (sse / sst)
+r2
+```

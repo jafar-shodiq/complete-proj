@@ -1,0 +1,33 @@
+```{r}
+df <- read.csv('../datasets/bank_note_data.csv')
+head(df)
+```
+```{r}
+str(df)
+```
+```{r}
+library(caTools)
+
+set.seed(101)
+sample <- sample.split(df$Class, SplitRatio=0.7)
+train <- subset(df, sample == TRUE)
+test <- subset(df, sample == FALSE)
+```
+
+```{r}
+library(neuralnet)
+
+nn <- neuralnet(Class ~., data=train, hidden=10, linear.output=FALSE)
+```
+
+```{r}
+predicted.nn.values <- compute(nn, test[,1:4])
+head(predicted.nn.values$net.result)
+```
+```{r}
+predictions <- sapply(predicted.nn.values$net.result, round)
+head(predictions)
+```
+```{r}
+table(predictions, test$Class)
+```

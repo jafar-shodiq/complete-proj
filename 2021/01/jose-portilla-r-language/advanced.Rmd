@@ -1,0 +1,168 @@
+#####
+**Built-in R features**
+
+```{r}
+seq(0, 10, by=2)
+```
+```{r}
+v <- c(1, 4, 7, 2, 13, 3, 11)
+sort(v)
+```
+```{r}
+sort(v, decreasing=T)
+```
+```{r}
+v <- 1:10
+v
+```
+```{r}
+rev(v)
+```
+```{r}
+str(v)
+```
+```{r}
+str(mtcars)
+```
+```{r}
+summary(mtcars)
+```
+```{r}
+v2 <- 35:40
+v2
+```
+```{r}
+append(v, v2)
+```
+```{r}
+v <- c(1, 2, 3)
+is.vector(v)
+```
+```{r}
+is.data.frame(mtcars)
+```
+```{r}
+v
+```
+```{r}
+as.list(v)
+```
+```{r}
+as.matrix(v)
+```
+#####
+**Apply**
+
+```{r}
+sample(x = 1:100, 3)
+```
+```{r}
+v <- c(1, 2, 3, 4, 5)
+v
+```
+```{r}
+addrand <- function(num){
+  ran <- sample(1:100, 1)
+  return(num + ran)
+}
+result <- sapply(v, addrand)
+result
+```
+```{r}
+v <- 1:5
+v
+```
+```{r}
+times2 <- function(num){
+  return(num * 2)
+}
+result <- sapply(v, times2)
+result
+```
+```{r}
+v <- 10:20
+result <- sapply(v, function(num){num * 2})
+result
+```
+```{r}
+v <- 1:5
+add.choice <- function(num, choice){
+  return(num + choice)
+}
+sapply(v, add.choice, choice=100)
+```
+#####
+**Math functions**
+
+```{r}
+v <- c(-1, -5, 6, 3, -10, 4)
+abs(v)
+```
+```{r}
+sum(v)
+```
+```{r}
+mean(v)
+```
+```{r}
+round(2.36872648764234, digits=5)
+```
+#####
+**Regular expressions**
+
+```{r}
+text <- 'Hi there, do you know who you are voting for?'
+text
+```
+```{r}
+grepl('voting', text)
+```
+```{r}
+grepl('do you', text)
+```
+```{r}
+grepl('hi there', text)
+```
+```{r}
+v <- c('a', 'b', 'c', 'd', 'd')
+grepl('b', v)
+```
+```{r}
+grep('b', v)
+```
+```{r}
+grep('d', v)
+```
+#####
+**Dates and timestamps**
+
+```{r}
+Sys.Date()
+```
+```{r}
+class(Sys.Date())
+```
+```{r}
+c <- '1990-01-01'
+class(c)
+```
+```{r}
+my.date <- as.Date(c)
+class(my.date)
+```
+```{r}
+my.date <- as.Date('Nov-03-90', format='%b-%d-%y')
+my.date
+```
+```{r}
+as.Date('June,01,2002', format='%B,%d,%Y')
+```
+```{r}
+as.POSIXct('11:02:03', format='%H:%M:%S')
+```
+```{r}
+strptime('11:02:03', format='%H:%M:%S')
+```
+```{r}
+#help(strptime)
+```

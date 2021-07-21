@@ -1,0 +1,31 @@
+```{r}
+a <- c(1, 2, 3)
+b <- c(4, 5, 6)
+mat <- rbind(a, b)
+mat
+```
+```{r}
+mat <- matrix(1:9, byrow=T, nrow=3)
+mat
+```
+```{r}
+mat2 <- matrix(1:25, byrow=T, nrow=5)
+mat2
+```
+```{r}
+mat2[2:3, 2:3]
+```
+```{r}
+mat2[4:5, 4:5]
+```
+```{r}
+sum(mat2)
+```
+```{r}
+help(runif)
+```
+```{r}
+u <- matrix(runif(20, min=0, max=100), nrow=4)
+u
+```
+

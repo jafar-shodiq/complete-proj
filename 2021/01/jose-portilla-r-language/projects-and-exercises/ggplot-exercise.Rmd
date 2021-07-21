@@ -1,0 +1,30 @@
+```{r}
+library(ggplot2)
+library(ggthemes)
+head(mpg)
+```
+```{r}
+pl <- ggplot(mpg, aes(x=hwy))
+pl2 <- pl + geom_histogram(fill='red', alpha=0.3, bins=30)
+pl2
+```
+```{r}
+pl <- ggplot(mpg, aes(x=manufacturer))
+pl2 <- pl + geom_bar(aes(fill=factor(cyl)))
+pl2
+```
+```{r}
+head(txhousing)
+```
+```{r}
+pl <- ggplot(txhousing, aes(x=sales, y=volume))
+pl2 <- pl + geom_point(color='blue', alpha=0.4)
+pl2
+```
+```{r}
+pl <- ggplot(txhousing, aes(x=sales, y=volume))
+pl2 <- pl + geom_point(color='blue', alpha=0.4)
+pl3 <- pl2 + geom_smooth(color='red')
+pl3
+```
+

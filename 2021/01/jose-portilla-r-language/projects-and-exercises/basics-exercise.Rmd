@@ -1,0 +1,29 @@
+```{r}
+2^5
+```
+```{r}
+stock.prices <- c(23, 27, 23, 21, 34)
+stock.prices
+```
+```{r}
+names(stock.prices) <- c('Mon', 'Tue', 'Wed', 'Thu', 'Fri')
+stock.prices
+```
+```{r}
+mean(stock.prices)
+```
+```{r}
+over.23 <- stock.prices > 23
+over.23
+```
+```{r}
+stock.prices[over.23]
+```
+```{r}
+max.price <- stock.prices == max(stock.prices)
+max.price
+```
+```{r}
+stock.prices[max.price]
+```
+

@@ -1,0 +1,54 @@
+```{r}
+v <- c(1, 2, 3)
+m <- matrix(1:10, nrow=2)
+df <- mtcars
+```
+```{r}
+class(v)
+```
+```{r}
+class(m)
+```
+```{r}
+class(df)
+```
+```{r}
+my.list <- list(v, m, df)
+my.list
+```
+```{r}
+my.named.list <- list(sample.vec=v, my.matrix=m, sample.df=df)
+my.named.list
+```
+```{r}
+my.named.list$sample.vec
+```
+```{r}
+my.list[1]
+```
+```{r}
+my.named.list[1]
+```
+```{r}
+my.named.list['sample.vec']
+```
+```{r}
+class(my.named.list['sample.vec'])
+```
+```{r}
+my.named.list$sample.vec
+```
+```{r}
+class(my.named.list$sample.vec)
+```
+```{r}
+my.named.list[['sample.vec']]
+```
+```{r}
+double.list <- c(my.named.list, my.named.list)
+double.list
+```
+```{r}
+str(my.named.list)
+```
+

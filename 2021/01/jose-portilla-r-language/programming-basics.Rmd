@@ -1,0 +1,120 @@
+#####
+**Logical Operators**
+
+```{r}
+x <- 10
+x < 20
+```
+```{r}
+x > 5
+```
+```{r}
+(x < 20) & (x > 5)
+```
+```{r}
+(x < 20) | (x > 5)
+```
+```{r}
+x != 10
+```
+#####
+**Conditional statements**
+
+```{r}
+temp <- 45
+
+if (temp > 80){
+  print('Hot')
+} else if(temp <= 80 & temp >= 40){
+  print('Medium')
+} else{
+  print('Cool')
+}
+```
+#####
+**Loops**
+
+```{r}
+x <- 0
+
+while (x < 10){
+  print(paste0('X is: ', x))
+  x <- x+1
+  
+  if(x == 10){
+    print('X is now equal to 10')
+    break
+  }
+}
+```
+```{r}
+x <- 0
+while (x < 10){
+  print(paste0('X is: ', x))
+  x <- x+1
+  
+  if (x == 5){
+    break
+  }
+}
+```
+```{r}
+mat <- matrix(1:25, nrow=5)
+mat
+```
+```{r}
+for (row in 1:nrow(mat)){
+  for(col in 1:ncol(mat)){
+    print(paste('The element at row: ', row, 'and col: ', col, 'is ', mat[row, col]))
+  }
+}
+```
+#####
+**Functions**
+
+```{r}
+v <- 'this is a global variable'
+stuff <- 'this is a global stuff'
+
+func <- function(stuff){
+  print(v)
+  stuff <- 'reassign stuff inside of this function func'
+  print(stuff)
+}
+func(stuff)
+```
+```{r}
+times5 <- function(num){
+  my.result <- num * 5
+  return(my.result)
+}
+print(times5(20))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

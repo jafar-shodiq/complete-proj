@@ -1,0 +1,51 @@
+```{r}
+name <- c('Sam', 'Frank', 'Amy')
+age <- c(22, 25, 26)
+weight <- c(150, 165, 120)
+sex <- c('M', 'M', 'F')
+
+df <- data.frame(Name=name, Age=age, Weight=weight, Sex=sex)
+df
+```
+```{r}
+is.data.frame(mtcars)
+```
+```{r}
+mat <- matrix(1:25, nrow=5)
+mat
+```
+```{r}
+df <- data.frame(mat)
+df
+```
+```{r}
+df <- mtcars
+head(df)
+```
+```{r}
+mean(df$'mpg')
+```
+```{r}
+df[(df$'cyl' == 6), ]
+```
+```{r}
+df[, c('am', 'gear', 'carb')]
+```
+```{r}
+df$'performance' <- df$'hp'/df$'wt'
+```
+```{r}
+head(df)
+```
+```{r}
+df$'performance' <- round(df$'performance', 2)
+```
+```{r}
+head(df)
+```
+```{r}
+mean(df[(df$'hp' > 100) & (df$'wt' > 2.5), ]$'mpg')
+```
+```{r}
+df['Hornet Sportabout', ]$'mpg'
+```

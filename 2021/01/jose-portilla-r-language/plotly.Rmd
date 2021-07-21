@@ -1,0 +1,15 @@
+```{r}
+#install.packages('plotly')
+```
+```{r}
+library(ggplot2)
+library(plotly)
+```
+```{r}
+pl <- ggplot(mtcars, aes(mpg, wt)) + geom_point()
+pl
+```
+```{r}
+gpl <- ggplotly(pl)
+gpl
+```

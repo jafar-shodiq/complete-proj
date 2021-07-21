@@ -1,0 +1,68 @@
+#####
+**CSV**
+
+```{r}
+write.csv(mtcars, file='./datasets/example-2.csv')
+```
+```{r}
+df <- read.csv('./datasets/example-2.csv')
+df
+```
+```{r}
+help('read.csv')
+```
+#####
+**Excel**
+
+```{r}
+#install.packages('readxl')
+```
+```{r}
+library(readxl)
+```
+```{r}
+excel_sheets('./datasets/Sample-Sales-Data.xlsx')
+```
+```{r}
+df <- read_excel('./datasets/Sample-Sales-Data.xlsx', sheet='Sheet1')
+head(df)
+```
+```{r}
+sum(df$Value)
+```
+```{r}
+entire.workbook <- lapply(excel_sheets('./datasets/Sample-Sales-Data.xlsx'), read_excel, path='./datasets/Sample-Sales-Data.xlsx')
+```
+```{r}
+entire.workbook
+```
+```{r}
+head(mtcars)
+```
+```{r}
+#install.packages('writexl')
+```
+```{r}
+library(writexl)
+```
+```{r}
+write_xlsx(mtcars, './datasets/output-sample.xlsx')
+```
+```{r}
+df <- read_excel('./datasets/output-sample.xlsx', sheet='Sheet1')
+head(df)
+```
+#####
+**SQL**
+
+Using PostgreSQL
+```{r}
+#install.packages('RPostgreSQL')
+```
+```{r}
+library(RPostgreSQL)
+#help('RPostgreSQL')
+??RPostgreSQL
+```
+Google r-bloggers.
+Will touch on this later

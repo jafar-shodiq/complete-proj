@@ -1,0 +1,153 @@
+#####
+**Dplyr**
+
+```{r}
+#install.packages('dplyr')
+```
+```{r}
+#install.packages('nycflights13')
+```
+```{r}
+library(dplyr)
+library(nycflights13)
+```
+```{r}
+head(flights)
+```
+```{r}
+summary(flights)
+```
+```{r}
+str(flights)
+```
+```{r}
+head(filter(flights, month==11, day==3, carrier=='AA'))
+```
+```{r}
+head(flights[(flights$month == 11) & (flights$day == 3) & (flights$carrier == 'AA'), ])
+```
+```{r}
+slice(flights, 1:10)
+```
+```{r}
+head(arrange(flights, year, month, day, arr_time))
+```
+```{r}
+head(select(flights, carrier))
+```
+```{r}
+head(select(flights, carrier, arr_time, day))
+```
+```{r}
+head(rename(flights, year_new=year))
+```
+```{r}
+distinct(select(flights, carrier))
+```
+```{r}
+head(mutate(flights, new_col=arr_delay - dep_delay))
+```
+```{r}
+head(transmute(flights, new_col=arr_delay - dep_delay))
+```
+```{r}
+summarise(flights, avg_air_time=mean(air_time, na.rm=TRUE))
+```
+```{r}
+sample_n(flights, 10)
+```
+```{r}
+head(sample_frac(flights, 0.1))
+```
+#####
+**Pipe operator**
+
+```{r}
+library(dplyr)
+```
+```{r}
+df <- mtcars
+head(df)
+```
+```{r}
+result <- arrange(sample_n(filter(df, mpg > 20), size=5), desc(mpg))
+result
+```
+```{r}
+a <- filter(df, mpg > 20)
+b <- sample_n(a, size=5)
+result <- arrange(b, desc(mpg))
+result
+```
+```{r}
+# pipe
+result <- df %>% filter(mpg > 20) %>% sample_n(size=5) %>% arrange(desc(mpg))
+result
+```
+#####
+**Tidyr**
+
+```{r}
+#install.packages('tidyr')
+```
+```{r}
+#install.packages('data.table')
+```
+```{r}
+library(tidyr)
+library(data.table)
+```
+```{r}
+comp <- c(1, 1, 1, 2, 2, 2, 3, 3, 3)
+yr <- c(1998, 1999, 2000, 1998, 1999, 2000, 1998, 1999, 2000)
+q1 <- runif(9, min=0, max=100)
+q2 <- runif(9, min=0, max=100)
+q3 <- runif(9, min=0, max=100)
+q4 <- runif(9, min=0, max=100)
+
+df <- data.frame(comp=comp, year=yr, qtr1=q1, qtr2=q2, qtr3=q3, qtr4=q4)
+df
+```
+```{r}
+gather(df, quarter, revenue, qtr1:qtr4)
+```
+```{r}
+df %>% gather(quarter, revenue, qtr1:qtr4)
+```
+```{r}
+stocks <- data.frame(
+  time=as.Date('2009-01-01') + 0:9,
+  x=rnorm(10, 0, 1),
+  y=rnorm(10, 0, 2),
+  z=rnorm(10, 0, 4)
+)
+stocks
+```
+```{r}
+stocks.gather <- stocks %>% gather(stock, price, x, y, z)
+stocks.gather
+```
+```{r}
+stocks.gather %>% spread(stock, price) 
+```
+```{r}
+spread(stocks.gather, time, price)
+```
+```{r}
+df <- data.frame(new.col=c(NA, 'a.x', 'b.y', 'c.z'))
+df
+```
+```{r}
+separate(df, new.col, c('ABC', 'XYZ'))
+```
+```{r}
+df <- data.frame(new.col=c(NA, 'a-x', 'b-y', 'c-z'))
+df
+```
+```{r}
+df.sep <- separate(data=df, col=new.col, into=c('abc', 'xyz'), sep='-')
+df.sep
+```
+```{r}
+unite(df.sep, new.joined.col, abc, xyz, sep='-')
+```
