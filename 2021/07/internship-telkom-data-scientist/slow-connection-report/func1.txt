@@ -1,0 +1,48 @@
+import numpy as np
+import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
+
+df = pd.read_feather('D:/internship-telkom/data-science/slow-connection/CW02_dataset.ftr')
+
+def make_df_bin(bin_1h, sample):
+    cols = ['user_id', 'date_time', 'reportdate', 'bin_1h', 'int_latency_score', 'ext_latency_score', 'fd_latency_score',
+            'int_ploss_score', 'ext_ploss_score', 'ses_setup_score', 'ser_acces_score']
+
+    report1 = df[cols][(df['bin_1h'] >= bin_1h) & (df['bin_1h'] < 0)].drop_duplicates().sample(sample)
+    report1.drop('user_id', axis=1, inplace=True)
+    report1['report_0_1'] = 1
+    
+    report0 = df[cols][(df['bin_1h'] < bin_1h) | (df['bin_1h'] > 0)].drop_duplicates().sample(sample)
+    report0.drop('user_id', axis=1, inplace=True)
+    report0['report_0_1'] = 0
+    
+    df_report = pd.concat([report1, report0])
+    return df_report
+
+        
+def make_df_score(score_name, bin_1h=-48, sample=100000):
+    try:
+        cols = ['name', 'score1', 'score2', 'score3', 'score4', 'scoremin1', 'report']
+        score_lst = [1, 2, 3, 4, -1]
+
+        df_report = make_df_bin(bin_1h, sample)
+        df_score = pd.DataFrame(columns=cols)
+        df_score['report'] = [0, 1]
+        for n1, score in zip(range(1, 6), score_lst):
+            for n2 in range(0, 2):
+                df_score[cols[n1]][df_score['report'] == n2] = df_report[(df_report['report_0_1'] == n2) &
+                                                                         (df_report[score_name] == score)].shape[0]                                                                  
+        df_score['name'] = score_name
+        return df_score
+    except:
+        print('Error! Please specify less smaller sample size.')
+
+
+cols = [col for col in df.columns if 'score' in col]
+
+df_conc = pd.concat([make_df_score(cols[0]), make_df_score(cols[1]), make_df_score(cols[2]), make_df_score(cols[3]),
+                     make_df_score(cols[4]), make_df_score(cols[5]), make_df_score(cols[6])])
+df_conc.reset_index(drop=True, inplace=True)
+df_conc[['score1', 'score2', 'score3', 'score4', 'scoremin1']] = round(df_conc[['score1', 'score2', 'score3', 'score4', 'scoremin1']].astype(int) / 1000, 2)
+print(df_conc)
